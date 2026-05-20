@@ -182,6 +182,7 @@
       animation: fadeInName 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
+    /* Continuous Shine Animation - No Underline */
     .highlight-name {
       color: transparent;
       background: linear-gradient(90deg, #ffaa42 0%, #ffffff 50%, #ffaa42 100%);
@@ -597,6 +598,43 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .hero-content { flex-direction: column; text-align: center; gap: 3rem; }
+      .hero-text, .hero-image { max-width: 100%; margin: 0 auto; }
+      .name-wrapper { white-space: normal; } 
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background: var(--panel);
+        width: 250px;
+        height: calc(100vh - 70px);
+        padding: 2rem;
+        transition: var(--transition);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+      }
+      .nav-links.active { right: 0; }
+      .mobile-toggle { display: block; }
+      .hero-title { font-size: 3.5rem; }
+      .avatar-container { width: 350px; height: 350px; }
+      .contact-icons { flex-wrap: wrap; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); } 
+    }
+
+    @media (max-width: 576px) {
+      .section { padding: 3rem 0; }
+      .section-title { font-size: 2rem; }
+      .hero-title { font-size: 2.8rem; }
+      .stats { grid-template-columns: 1fr; }
+      .achievements-grid, .projects-grid { grid-template-columns: 1fr; }
+      .skill-grid { grid-template-columns: 1fr; } 
+    }
   </style>
 </head>
 <body id="top">
@@ -720,67 +758,100 @@
       <div class="achievements-grid">
         <div class="achievement-card">
           <div class="achievement-header">
-            <h3>National Automation Robotics Challenge 2024</h3>
-            <div class="date">September 20, 2024</div>
+            <h3>CodeKong Hackathon</h3>
+            <div class="date">1st Place</div>
           </div>
           <div class="achievement-body">
-            <p>Developed an AI-powered irrigation system that measures soil moisture and uses weather data to predict watering needs with 95% accuracy.</p>
-            <span class="achievement-badge">1st Place - ₹7,500</span>
+            <p>Secured first place out of competitive technical submissions, capturing the prime cash prize valuation.</p>
+            <span class="achievement-badge">1st Place - ₹15,000</span>
           </div>
         </div>
-        
+
         <div class="achievement-card">
           <div class="achievement-header">
-            <h3>IEEE Repower Competition</h3>
-            <div class="date">November 10, 2024</div>
+            <h3>CodePi (Hackathon & Ideathon)</h3>
+            <div class="date">2nd Place</div>
           </div>
           <div class="achievement-body">
-            <p>Presented BHOOMI, an innovative sustainable energy solution, securing 3rd position at the IEEE PES ISGT Asia 2024 summit.</p>
-            <span class="achievement-badge">3rd Place</span>
+            <p>Earned double runner-up finishes across dual development and ideation pathways in an expansive tech summit.</p>
+            <span class="achievement-badge">2nd Place - Pool ₹50,000+</span>
           </div>
         </div>
-        
+
         <div class="achievement-card">
           <div class="achievement-header">
-            <h3>Innovate H2O Ideathon 2024</h3>
-            <div class="date">February 2024</div>
+            <h3>Hack4Health</h3>
+            <div class="date">1st Place</div>
           </div>
           <div class="achievement-body">
-            <p>AI-powered irrigation system optimized water usage for crops using neural networks. Won ₹10,000 funding.</p>
-            <span class="achievement-badge">Winner - ₹10,000</span>
+            <p>Engineered an exceptional software/hardware implementation tailored directly for critical health workflows.</p>
+            <span class="achievement-badge">1st Place</span>
           </div>
         </div>
-        
+
         <div class="achievement-card">
           <div class="achievement-header">
-            <h3>Atal Marathon 2024</h3>
-            <div class="date">2023-24</div>
+            <h3>MCA CodeNest Hackathon</h3>
+            <div class="date">1st Place</div>
           </div>
           <div class="achievement-body">
-            <p>Soil Smart project ranked among top 500 teams. IoT-driven soil analyzer with AI predictions for fertilizer dosages.</p>
-            <span class="achievement-badge">Top 500</span>
+            <p>Commanded top ranking in intensive programming, logic layout, and rapid-prototyping tracks.</p>
+            <span class="achievement-badge">Winner - ₹7,000</span>
           </div>
         </div>
-        
-        <div class="achievement-card">
-          <div class="achievement-header">
-            <h3>MCA Codenest Hackathon</h3>
-            <div class="date">February 1, 2025</div>
-          </div>
-          <div class="achievement-body">
-            <p>Secured Winner position in high-pressure coding and problem-solving challenges among top young minds.</p>
-            <span class="achievement-badge">Winner</span>
-          </div>
-        </div>
-        
+
         <div class="achievement-card">
           <div class="achievement-header">
             <h3>Green Pioneers Hackathon</h3>
-            <div class="date">March 1, 2025</div>
+            <div class="date">Most Impactful Award</div>
           </div>
           <div class="achievement-body">
-            <p>Bhoomi project recognized as Potentially Most Impactful for sustainable agriculture using pH sensors.</p>
+            <p>Recognized for building highly sustainable engineering prototypes optimized to drive practical ecological impact.</p>
             <span class="achievement-badge">Most Impactful - ₹5,000</span>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <h3>Mega Hackathon 2025</h3>
+            <div class="date">Sustainability Award</div>
+          </div>
+          <div class="achievement-body">
+            <p>Claimed top honors within environmental tech frameworks for implementing green engineering models.</p>
+            <span class="achievement-badge">Sustainability - ₹10,000+</span>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <h3>World Robot Olympiad (WRO)</h3>
+            <div class="date">2nd Place</div>
+          </div>
+          <div class="achievement-body">
+            <p>Demonstrated highly efficient autonomous mechanical logic and dynamic control in premier global robotics competitions.</p>
+            <span class="achievement-badge">2nd Place</span>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <h3>National & Strategic Finalists</h3>
+            <div class="date">Top Placements</div>
+          </div>
+          <div class="achievement-body">
+            <p>Consistently locked down high tiers: Top 10 at SDGs In Practice, Top 15 at MicroLabs Fever, Top 20 at Student Hacks, and Finalist positions at Empower Hacks 2.0 & Hobby2Hustle.</p>
+            <span class="achievement-badge">Elite Ranking Tier</span>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <h3>Innovation Makeathons</h3>
+            <div class="date">Special Recognition</div>
+          </div>
+          <div class="achievement-body">
+            <p>Received Certificates of Excellence and Appreciation across multiple major summits, including the Deckathon, Maximally Startup Makeathon (2024), and Hack 4 Humanity (2023).</p>
+            <span class="achievement-badge">Excellence Awards</span>
           </div>
         </div>
       </div>
