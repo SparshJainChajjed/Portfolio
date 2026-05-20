@@ -156,17 +156,19 @@
     .hero-content {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 6rem;
       width: 100%;
     }
 
     .hero-text {
-      flex: 0 1 auto;
+      flex: 1;
       max-width: 600px;
       margin-right: auto;
     }
 
     .hero-title {
-      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      font-size: clamp(3rem, 6vw, 5.5rem);
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 2rem;
@@ -176,23 +178,34 @@
     .name-wrapper {
       white-space: nowrap; 
       display: block;
+      opacity: 0;
+      animation: fadeInName 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
+    /* Continuous Shine Animation - No Underline */
     .highlight-name {
       color: transparent;
-      background: linear-gradient(90deg, #ffaa42, #ff7b00, #ffce8a, #ffaa42);
+      background: linear-gradient(90deg, #ffaa42 0%, #ffffff 50%, #ffaa42 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
-      animation: fadeInName 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards, shine 3s linear infinite 2s;
       font-weight: 900;
+      display: inline-block;
       letter-spacing: 0.5px;
-      opacity: 0;
+      animation: shine 3s linear infinite;
     }
 
     @keyframes fadeInName {
-      0% { opacity: 0; transform: translateY(20px); filter: brightness(1.5); }
-      100% { opacity: 1; transform: translateY(0); filter: brightness(1); }
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: brightness(1.5);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: brightness(1);
+      }
     }
 
     @keyframes shine {
@@ -223,20 +236,20 @@
     }
 
     .hero-image {
-      flex: 0 0 auto;
+      flex: 1;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       position: relative;
     }
 
+    /* Circular Border Animation */
     .avatar-container {
       position: relative;
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      overflow: hidden;
+      overflow: hidden; 
       box-shadow: var(--shadow);
-      border: 5px solid var(--accent);
       animation: float 6s ease-in-out infinite;
     }
 
@@ -247,22 +260,22 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: conic-gradient(transparent, var(--accent), transparent 30%);
+      background: conic-gradient(transparent, var(--accent) 50%, transparent 100%);
       animation: rotate 4s linear infinite;
     }
 
     .avatar-container::after {
       content: '';
       position: absolute;
-      inset: 5px;
+      inset: 5px; 
       border-radius: 50%;
-      background: var(--bg);
+      background: var(--bg); 
       z-index: 1;
     }
 
     .avatar {
       position: absolute;
-      inset: 10px;
+      inset: 10px; 
       border-radius: 50%;
       overflow: hidden;
       z-index: 2;
@@ -323,7 +336,7 @@
     /* SKILLS SECTION */
     .skill-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr); /* Exactly 3 cards per row across 2 rows */
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -583,18 +596,6 @@
       letter-spacing: 1px;
     }
 
-    /* ANIMATIONS */
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
     /* RESPONSIVE DESIGN */
     @media (max-width: 992px) {
       .hero-content { flex-direction: column; text-align: center; gap: 3rem; }
@@ -690,33 +691,33 @@
       <div class="skill-grid">
         <div class="skill-card">
           <i class="fas fa-microchip"></i>
-          <h3>Embedded Systems</h3>
-          <p>Raspberry Pi, Arduino</p>
+          <h3>Microcontrollers & IoT</h3>
+          <p>Arduino, ESP32, Bharat Pi, Sensors</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-raspberry-pi"></i>
+          <h3>Single-Board Computers</h3>
+          <p>Raspberry Pi Ecosystem</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Core Programming</h3>
+          <p>C++, Python</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-file-code"></i>
+          <h3>Web Development</h3>
+          <p>HTML, CSS</p>
         </div>
         <div class="skill-card">
           <i class="fas fa-brain"></i>
           <h3>AI & Machine Learning</h3>
-          <p>Neural Networks, Predictive Models</p>
+          <p>Neural Networks, Data Models</p>
         </div>
         <div class="skill-card">
-          <i class="fas fa-code"></i>
-          <h3>Programming</h3>
-          <p>Python, C++, JavaScript</p>
-        </div>
-        <div class="skill-card">
-          <i class="fas fa-cogs"></i>
-          <h3>Robotics</h3>
-          <p>Autonomous Systems, Control</p>
-        </div>
-        <div class="skill-card">
-          <i class="fas fa-cloud"></i>
-          <h3>IoT Solutions</h3>
-          <p>Sensor Integration, Data Analytics</p>
-        </div>
-        <div class="skill-card">
-          <i class="fas fa-project-diagram"></i>
+          <i class="fas fa-cubes"></i>
           <h3>3D Modeling</h3>
-          <p>CAD Design, Prototyping</p>
+          <p>Fusion 360, Tinkercad</p>
         </div>
       </div>
     </div>
